@@ -17,11 +17,11 @@ El objetivo de la primera iteración es crear un programa que pueda determinar
 si una función de transferencia es estable o no, y graficar los polos obtenidos.
 Para ello se proponen los siguientes subproblemas a resolver:
 - [x] Lectura de los datos desde la terminal.
-- [ ] Obtener los ceros y los polos. Estos números pueden ser complejos, por lo
+- [x] Obtener los ceros y los polos. Estos números pueden ser complejos, por lo
     que se tiene que tomar en cuenta al obtener las raices de los polinomios.
-    - [ ] Definir si se trata de un sistema: estable, al borde de la inestabilidad o inestable.
+    - [x] Definir si se trata de un sistema: estable, al borde de la inestabilidad o inestable.
 - [x] Obtener funcion de transferencia. Uso de la biblioteca control.
-- [ ] Graficar los polos en su respectiva gráfica. Esto implica el uso de la
+- [x] Graficar los polos en su respectiva gráfica. Esto implica el uso de la
     biblioteca matplotlib.
 ### Metas finales.
 Como objetivos finales tenemos:
