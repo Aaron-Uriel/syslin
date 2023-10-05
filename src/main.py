@@ -9,17 +9,29 @@ def main():
     num = list(map(float, num));
     den = list(map(float, den));
 
+    pnum = poly.Polynomial(num);
+    pden = poly.Polynomial(den);
     zeros = poly.polyroots(num)
     poles = poly.polyroots(den)
+
+    estado = "estable"
+    for i in poles:
+        if i == 0:
+            estado = "críticamente estable"
+        elif i > 0:
+            estado = "inestable"
+            break
 
     if (len(den) < len(num)):
         print("Función de transferencia inválida");
 
-    # Función de transferencia.
-    trf_fn = ct.tf(num, den)
-
+    print("El orden de la función de transferencia es:", len(pden.convert().coef)-1)
     print("Los ceros de la función están en: ", zeros)
     print("Los polos de la función están en: ", poles)
+    print("El estado del sistema es:", estado)
+
+    # Función de transferencia.
+    trf_fn = ct.tf(num, den)
 
     plt.style.use('_mpl-gallery')
 
