@@ -25,7 +25,7 @@ def main():
         return 1
 
     # Función de transferencia.
-    trf = ct.tf(num, den)
+    trf = ct.tf(num[::-1], den[::-1])
     (t, y) = ct.step_response(trf)
     print("Función de transferencia recibida:")
     print(trf)
@@ -34,7 +34,8 @@ def main():
     print("Los polos de la función están en: ", poles)
     print("El estado del sistema es:", estado)
 
-    plt.style.use('_mpl-gallery')
+    #plt.style.use('_mpl-gallery')
+    plt.style.use('grayscale')
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2,
                                    figsize=(10, 5), layout='compressed')
     ax1.scatter(zeros.real, zeros.imag, marker='o', label='Ceros')
@@ -42,12 +43,14 @@ def main():
     ax1.set_title('Polos y ceros')
     ax1.set_xlabel('Componente real')
     ax1.set_ylabel('Componente imaginario')
+    ax1.grid()
     ax1.legend()
 
     ax2.plot(t, y)
     ax2.set_title('Respuesta escalón unitario')
     ax2.set_ylabel('Magnitud')
     ax2.set_xlabel('Tiempo')
+    ax2.grid()
 
     plt.show()
 
