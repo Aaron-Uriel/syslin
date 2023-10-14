@@ -23,15 +23,28 @@ Para ello se proponen los siguientes subproblemas a resolver:
 - [x] Obtener funcion de transferencia. Uso de la biblioteca control.
 - [x] Graficar los polos en su respectiva gráfica. Esto implica el uso de la
     biblioteca matplotlib.
+### Metas para segunda iteración.
+Se busca la ampliación del programa con mayor funcionalidad y modularización del
+código.
+Metas:
+- [ ] Programa más interactivo con un menú indicando que operaciones determinar.
+- [x] Obtener el valor final de la función de transferencia.
+- [ ] Especificar el valor del escalón unitario y ponerlo como entrada a la 
+    función de transferencia (Brandon).
+- [ ] Indicar el valor máximo y porcentage del sobrepulso de la función en 
+    caso de que los polos tengan componentes imaginarios (Jorge).
+- [ ] Recibir y calcular la respuesta al escalón para sistemas MIMO.
+- [ ] Determinar respuesta con lazo abierto (Todos).
+- [ ] Incluir gráfica de la función de entrada (Aaron).
 ### Metas finales.
 Como objetivos finales tenemos:
 - [ ] Recibir sistema de ODEs que definan a un sistema de control.
 - [ ] Recibir condiciones iniciales.
 - [ ] Aplicar transformada de Laplace para resolver como parte de la resolución
       del sistema.
-- [ ] Obtener funciones de transferencia.
-- [ ] Determinar si es un sistema estable, críticamente estable o inestable.
-- [ ] Aplicar transformada inversa de Laplace para obtener la solución.
+- [x] Obtener funciones de transferencia.
+- [x] Determinar si es un sistema estable, críticamente estable o inestable.
+- [x] Aplicar transformada inversa de Laplace para obtener la solución.
 - [ ] Graficar las mismas ecuaciones diferenciales.
 Extra:
 - [ ] Interface gráfica para meter los datos.
