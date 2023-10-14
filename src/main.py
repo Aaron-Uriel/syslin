@@ -41,6 +41,8 @@ def main():
     print("Polos: ", poles)
     print("Orden del sistema:", len(poles))
     print("Estabilidad del sistema:", stability_status.name)
+    if stability_status == Stability.STABLE:
+        print("Valor final:", num[0]/den[0])
 
     plt.style.use('_mpl-gallery')
     #plt.style.use('grayscale')
