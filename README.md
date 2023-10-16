@@ -29,7 +29,7 @@ código.
 Metas:
 - [ ] Programa más interactivo con un menú indicando que operaciones determinar.
 - [x] Obtener el valor final de la función de transferencia.
-- [ ] Especificar el valor del escalón unitario y ponerlo como entrada a la 
+- [x] Especificar el valor del escalón unitario y ponerlo como entrada a la 
     función de transferencia (Brandon).
 - [ ] Indicar el valor máximo y porcentage del sobrepulso de la función en 
     caso de que los polos tengan componentes imaginarios (Jorge).

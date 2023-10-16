@@ -9,12 +9,14 @@ class Stability(Enum):
     CRITICALLY_STABLE = 1
     UNSTABLE = 2
 
-
 def main():
-    num = input("Coeficientes del polinomio numerador: ");
-    den = input("Coeficientes del polinomio denominador: ");
-    num = list(map(float, num.split()));
-    den = list(map(float, den.split()));
+    num = input("Coeficientes del polinomio numerador: ")
+    den = input("Coeficientes del polinomio denominador: ")
+    num = list(map(float, num.split()))
+    den = list(map(float, den.split()))
+
+    # Solicitar al usuario el valor del escalón unitario
+    step_value = float(input("Ingrese el valor del escalón unitario: "))
 
     # Función de transferencia.
     sys_tf = ct.tf(num[::-1], den[::-1])
@@ -24,7 +26,7 @@ def main():
     poles = sys_ss.poles()
 
     if (len(poles) < len(zeros)):
-        print("Función de transferencia inválida");
+        print("Función de transferencia inválida")
         return 1
 
     stability_status = Stability.STABLE
@@ -42,10 +44,9 @@ def main():
     print("Orden del sistema:", len(poles))
     print("Estabilidad del sistema:", stability_status.name)
     if stability_status == Stability.STABLE:
-        print("Valor final:", num[0]/den[0])
+        print("Valor final:", step_value*num[0]/den[0])
 
     plt.style.use('_mpl-gallery')
-    #plt.style.use('grayscale')
     fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2,
                                    figsize=(10, 5), layout='compressed')
     ax1.scatter(zeros.real, zeros.imag, marker='o', label='Ceros')
@@ -56,8 +57,12 @@ def main():
     ax1.grid(visible=True)
     ax1.legend()
 
-    response = ct.step_response(sys_tf)
-    ax2.plot(response.time, response.outputs, label='$y(t)$')
+    # Calcular la respuesta al escalón unitario personalizado manualmente
+    t = np.linspace(0, 10, 1000)
+    u = step_value * np.ones(t.shape)
+    y = ct.forced_response(sys_tf, T=t, U=u)
+
+    ax2.plot(t, y[1], label='$y(t)$')
     ax2.set_title('Respuesta escalón unitario')
     ax2.set_ylabel('Magnitud')
     ax2.set_xlabel('Tiempo')
