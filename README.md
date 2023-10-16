@@ -31,7 +31,7 @@ Metas:
 - [x] Obtener el valor final de la función de transferencia.
 - [x] Especificar el valor del escalón unitario y ponerlo como entrada a la 
     función de transferencia (Brandon).
-- [ ] Indicar el valor máximo y porcentage del sobrepulso de la función en 
+- [x] Indicar el valor máximo y porcentage del sobrepulso de la función en 
     caso de que los polos tengan componentes imaginarios (Jorge).
 - [ ] Recibir y calcular la respuesta al escalón para sistemas MIMO.
 - [ ] Determinar respuesta con lazo abierto (Todos).

@@ -64,6 +64,8 @@ def main():
     u = step_value * np.ones(t.shape)
     y = ct.forced_response(sys_tf, T=t, U=u)
 
+    print('Valor máximo de la función:', np.max(y[1]))
+
     ax2 = axd['response']
     ax2.plot(t, y[1], label='$y(t)$')
     ax2.set_title('Respuesta escalón unitario')
