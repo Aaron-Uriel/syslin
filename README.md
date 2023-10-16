@@ -35,7 +35,7 @@ Metas:
     caso de que los polos tengan componentes imaginarios (Jorge).
 - [ ] Recibir y calcular la respuesta al escalón para sistemas MIMO.
 - [ ] Determinar respuesta con lazo abierto (Todos).
-- [ ] Incluir gráfica de la función de entrada (Aaron).
+- [x] Incluir gráfica de la función de entrada (Aaron).
 ### Metas finales.
 Como objetivos finales tenemos:
 - [ ] Recibir sistema de ODEs que definan a un sistema de control.

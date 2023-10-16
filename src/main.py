@@ -47,8 +47,10 @@ def main():
         print("Valor final:", step_value*num[0]/den[0])
 
     plt.style.use('_mpl-gallery')
-    fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2,
-                                   figsize=(10, 5), layout='compressed')
+    (fig, axd) = plt.subplot_mosaic([['poles', 'response'],
+                                     ['input', 'response']],
+                                    figsize=(10,5), layout='constrained')
+    ax1 = axd['poles']
     ax1.scatter(zeros.real, zeros.imag, marker='o', label='Ceros')
     ax1.scatter(poles.real, poles.imag, marker='x', label='Polos')
     ax1.set_title('Polos y ceros')
@@ -62,12 +64,21 @@ def main():
     u = step_value * np.ones(t.shape)
     y = ct.forced_response(sys_tf, T=t, U=u)
 
+    ax2 = axd['response']
     ax2.plot(t, y[1], label='$y(t)$')
     ax2.set_title('Respuesta escalón unitario')
     ax2.set_ylabel('Magnitud')
     ax2.set_xlabel('Tiempo')
     ax2.grid(visible=True)
     ax2.legend()
+
+    ax3 = axd['input']
+    ax3.plot(t, u, label='$u(t)$')
+    ax3.set_title('Señal de entrada.')
+    ax3.set_ylabel('Magnitud')
+    ax3.set_xlabel('Tiempo')
+    ax3.grid(visible=True)
+    ax3.legend()
 
     plt.show()
 
