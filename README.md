@@ -34,8 +34,14 @@ Metas:
 - [x] Indicar el valor máximo y porcentage del sobrepulso de la función en 
     caso de que los polos tengan componentes imaginarios (Jorge).
 - [ ] Recibir y calcular la respuesta al escalón para sistemas MIMO.
+- [ ] Recibir condiciones iniciales (después, Jorge).
 - [ ] Determinar respuesta con lazo abierto (Todos).
 - [x] Incluir gráfica de la función de entrada (Aaron).
+- [ ] Incluir escalones de duraciones específicas (Brandon).
+- [ ] Asegurarse que la gráfica incluya todo el intervalo para funciones que son
+    estables (Aaron).
+    - [ ] Obtener constantes de tiempo e imprimirlas.
+
 ### Metas finales.
 Como objetivos finales tenemos:
 - [ ] Recibir sistema de ODEs que definan a un sistema de control.
