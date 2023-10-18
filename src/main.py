@@ -50,7 +50,7 @@ def main():
     print("Estabilidad del sistema:", stability_status.name)
     print('Valor máximo de la función:', np.max(y[1]))
     if stability_status == Stability.STABLE:
-        print("Valor final:", step_value*num[0]/den[0])
+        print("Valor final:", step_value*num[len(num)-1]/den[len(den)-1])
 
     plt.style.use('_mpl-gallery')
     (fig, poles_axes) = plt.subplots(figsize=(5, 5), layout='constrained')
