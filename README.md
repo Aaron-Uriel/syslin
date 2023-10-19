@@ -38,9 +38,10 @@ Metas:
 - [ ] Determinar respuesta con lazo abierto (Todos).
 - [x] Incluir gráfica de la función de entrada (Aaron).
 - [ ] Incluir escalones de duraciones específicas (Brandon).
-- [ ] Asegurarse que la gráfica incluya todo el intervalo para funciones que son
+- [x] Asegurarse que la gráfica incluya todo el intervalo para funciones que son
     estables (Aaron).
-    - [ ] Obtener constantes de tiempo e imprimirlas.
+    - [x] ~Obtener constantes de tiempo e imprimirlas~. No es necesario porque
+    los polos ya nos indican las constantes de tiempo.
 
 ### Metas finales.
 Como objetivos finales tenemos:
