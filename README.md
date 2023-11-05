@@ -1,6 +1,55 @@
-# Simulación de sistemas lineales en Python
-Programa hecho en Python para simular sistemas de control continuo para la
-materia Control Analógico I.
+# Syslin.
+Simulación de sistemas de control lineales hecho de forma sencilla con Python.
+Programa hecho para el curso de Control Analógico I 2023-2024 de la Facultad
+de Ingeniería Eléctrica.
+
+## Objetivos del el producto final.
+Los objetivos estarán determinandose conforme avance el curso de control, por
+lo que se incluye todo lo que se ha determinado como requisito para el 
+proyecto hasta ahora.
+### Objetivos necesarios.
+- Interfaz gráfica que permita interactuar con el programa.
+- Recibir una descripción de la planta. Que puede ser dada en:
+    - Matrices de funciones de transferencia.
+- Definir el tipo de sistema al que se le calculará la respuesta.
+Como opciones tenemos (las opciones son combinables):
+    - Sistemas retroalimentados.
+    - Sistemas con controlador. El controlador es por ahora un amplificador.
+- Definir condiciones iniciales.
+- Definir función de entrada. Funciones de entrada contempladas:
+    - Escalones con amplitud y duración arbitrarios.
+- Diagnóstico de la respuesta obtenida, que incluirá:
+    - Valor final en caso de ser estable.
+    - Tiempo que tomará en estabilizarse en caso de ser estable.
+    - Valor máximo en caso de presentar sobrepulso con polos imaginarios.
+- Gráficas interactivas que muestren:
+     - La respuesta a través del tiempo. Mostrando el valor final en pantalla,
+     en caso de haberlo
+     - Función de entrada.
+     - Ceros y polos. Mostrando sus valores de forma fácil de ver.
+### Objetivos secundarios.
+- Configurar parámetros para la gráfica de la respuesta, como son:
+    - Intervalo.
+    - Cantidad de muestras.
+
+# Detallando en el diseño.
+El programa se mostrará en una sola ventana pero habrá secciones en donde se
+podrá ingresar/ver cierta información.
+Sección gráfica:
+- Respuesta. Muestra las gráficas de la función de entrada y la respuesta.
+- Polos. Solo muestra los polos
+Sección de parámetros:
+- Descripción. Se muestra una matriz de transferencia y la matriz de funciones
+de entrada en la cual se especificarán sus valores. Presionar un elemento de
+la matriz permitirá modificar su valor. Para funciones de entrada se mostrará
+la posibilidad de escoger entre un 
+- Condiciones iniciales. Aquí se pueden definir los valores iniciales para el
+sistema.
+Sección de diagnóstico:
+- Información del sistema calculado. Muestra información numérica clave del
+sistema después de ser calculado.
+- Información del sistema antes de ser calculado. Muestra que información es
+la que se tomará antes de calcular.
 
 ## Bibliotecas.
 - [matplotlib](https://matplotlib.org/): para realizar gráficas.
