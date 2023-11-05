@@ -55,7 +55,7 @@ def main():
     u = step_value * np.ones(time.shape)
     y = ct.forced_response(sys_tf, T=time, U=u)
     # Determinación del sobrepulso, si hay.
-    overpulse = np.max(y[1]) if np.any(poles.imag) else None
+    overpulse = np.max(y[1]) if np.any(poles.imag) or final_value == 0 else None
 
     # Impresión de datos.
     print("Información sobre la función de transferencia.")
@@ -65,10 +65,10 @@ def main():
     print("Orden del sistema:", len(poles))
     print("Estabilidad del sistema:", stability_status.name)
     if overpulse:
-        print("Sobrepulso:", overpulse)
+        print("Sobrepulso: {:.4g}".format(overpulse))
     if stability_status == Stability.STABLE:
-        print("Tiempo de estabilización: ", stabilize_time)
-        print("Valor final:", final_value)
+        print("Tiempo de estabilización: {:.4g}".format(stabilize_time))
+        print("Valor final: {:.4g}".format(final_value))
 
     # Creación de gráficas.
     plt.style.use('_mpl-gallery')
