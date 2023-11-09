@@ -66,42 +66,45 @@ El objetivo de la primera iteración es crear un programa que pueda determinar
 si una función de transferencia es estable o no, y graficar los polos obtenidos.
 Para ello se proponen los siguientes subproblemas a resolver:
 - [x] Lectura de los datos desde la terminal.
-- [x] Obtener los ceros y los polos. Estos números pueden ser complejos, por lo
-    que se tiene que tomar en cuenta al obtener las raices de los polinomios.
-    - [x] Definir si se trata de un sistema: estable, al borde de la inestabilidad o inestable.
+- [x] Obtener los ceros y los polos. Estos números pueden ser complejos, por
+lo que se tiene que tomar en cuenta al obtener las raices de los polinomios.
+    - [x] Definir si se trata de un sistema: estable, al borde de la 
+    inestabilidad o inestable.
 - [x] Obtener funcion de transferencia. Uso de la biblioteca control.
 - [x] Graficar los polos en su respectiva gráfica. Esto implica el uso de la
     biblioteca matplotlib.
 ### Metas para segunda iteración.
-Se busca la ampliación del programa con mayor funcionalidad y modularización del
-código.
+Se busca la ampliación del programa con mayor funcionalidad y modularización
+del código.
 Metas:
-- [ ] Programa más interactivo con un menú indicando que operaciones determinar.
-- [x] Obtener el valor final de la función de transferencia.
+- [ ] Hacer una interfaz gráfica (Aaron).
+- [ ] Implementar las formas de la entrada:
+    - [x] Escalón unitario.
+    - [ ] Escalón con múltiples intervalos (Brandon).
+    - [ ] Pulso.
+- [ ] Encontrar la forma de determinar el valor final del sistema.
+    - Ya la sabemos para el escalón unitario.
+    - Escalón con múltiples intervalos no la ocupa.
+    - Un pulso termina en 0 (la mayoría de las veces).
 - [x] Especificar el valor del escalón unitario y ponerlo como entrada a la 
     función de transferencia (Brandon).
 - [x] Indicar el valor máximo y porcentage del sobrepulso de la función en 
     caso de que los polos tengan componentes imaginarios (Jorge).
 - [ ] Recibir y calcular la respuesta al escalón para sistemas MIMO.
-- [ ] Recibir condiciones iniciales (después, Jorge).
-- [ ] Determinar respuesta con lazo abierto (Todos).
+    - [ ] El programa tiene que ser capaz de pedirlo desde la terminal.
+    - [ ] Implementarlo en la interfaz también.
+- [ ] Recibir condiciones iniciales (Jorge).
+- [ ] Determinar respuesta con un sistema retroalimentado (Aaron).
+- [ ] Determinar respuesta con un controlador (Aaron).
 - [x] Incluir gráfica de la función de entrada (Aaron).
-- [ ] Incluir escalones de duraciones específicas (Brandon).
 - [x] Asegurarse que la gráfica incluya todo el intervalo para funciones que son
     estables (Aaron).
     - [x] ~Obtener constantes de tiempo e imprimirlas~. No es necesario porque
     los polos ya nos indican las constantes de tiempo.
 
-### Metas finales.
-Como objetivos finales tenemos:
-- [ ] Recibir sistema de ODEs que definan a un sistema de control.
-- [ ] Recibir condiciones iniciales.
-- [ ] Aplicar transformada de Laplace para resolver como parte de la resolución
-      del sistema.
-- [x] Obtener funciones de transferencia.
-- [x] Determinar si es un sistema estable, críticamente estable o inestable.
-- [x] Aplicar transformada inversa de Laplace para obtener la solución.
-- [ ] Graficar las mismas ecuaciones diferenciales.
-Extra:
-- [ ] Interface gráfica para meter los datos.
-
+## Organización del código.
+El código tendrá separación entre lo que procesa el sistema y lo que maneja
+la interface gráfica.
+- `main.py` archivo principal del programa, cargará la interface de Qt.
+- `cli.py` incluirá el manejo de la aplicación por terminal.
+- `syslin.py` tendrá toda la lógica para procesar los sitemas de control.
